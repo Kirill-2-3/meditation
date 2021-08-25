@@ -1,0 +1,2460 @@
+body {
+    margin: 0;
+
+    font: 14px / 1.3 'Heebo', sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+
+    background-color: #edfbf9;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    margin: 0 0 20px;
+}
+
+p:last-child {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding-left: 0;
+
+    list-style: none;
+}
+
+img {
+    display: block;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+:focus {
+    outline: 0;
+}
+
+
+
+/* Page
+=========================*/
+
+.page {
+    min-width: 320px;
+
+    overflow: hidden;
+}
+
+
+
+/* Container
+=========================*/
+
+.container {
+    width: 100%;
+    max-width: 1655px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.container--features {
+    max-width: 1690px;
+}
+
+
+
+/* Btn
+=========================*/
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font: 24px / 1 'Heebo', sans-serif;
+    color: #fff;
+    text-align: center;
+
+    background: linear-gradient(180deg, #259385 0%, #159685 100%);
+    box-shadow: 0px 13px 28px rgba(26, 127, 114, .2);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.btn--start {
+    width: 300px;
+    height: 75px;
+    margin: 0 auto 70px;
+
+    font: 700 30px / 1 'Heebo', sans-serif;
+
+    background: linear-gradient(180deg, #259385 0%, #159685 100%);
+    border: 0;
+    border-radius: 50px;
+    box-shadow: 0px 20px 40px rgba(21, 113, 101, .2);
+
+    transition: box-shadow .2s linear;
+}
+
+.btn--start:hover,
+.btn--start:focus {
+    box-shadow: 0 20px 50px rgba(21, 113, 101, .5);
+}
+
+.btn--more {
+    width: 210px;
+    height: 55px;
+    margin: 0 auto;
+
+    transition: box-shadow .2s linear;
+
+    position: absolute;
+    left: 50%;
+    bottom: 70px;
+
+    transform: translateX(-50%);
+}
+
+.btn--more:hover,
+.btn--more:focus {
+    box-shadow: 0px 13px 28px rgba(26, 127, 114, .4);
+}
+
+.btn--transform {
+    position: static;
+
+    margin: 0;
+
+    transform: unset;
+}
+
+.btn--play {
+    width: 80px;
+    height: 80px;
+
+    background: linear-gradient(180deg, #259385 0%, #159685 100%);
+    border: 3px solid #fff;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    right: 40px;
+
+    transform: translateY(-50%);
+
+    transition: border-color .1s linear;
+}
+
+.btn--play:hover,
+.btn--play:focus {
+    border-color: #159685;
+}
+
+
+
+/* Burger
+=========================*/
+
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+
+    background: 0;
+    border: 0;
+    cursor: pointer;
+
+    position: relative;
+}
+
+.burger__span {
+    display: block;
+    width: 30px;
+    height: 4px;
+
+    background-color: #5cd2bf;
+    border-radius: 3px;
+
+    font-size: 0;
+
+    position: absolute;
+    left: 0;
+}
+
+.burger:before,
+.burger:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 4px;
+
+    background-color: #5cd2bf;
+    border-radius: 3px;
+
+    position: absolute;
+    left: 0;
+}
+
+.burger:before,
+.burger:after {
+    transition: all .2s linear;
+}
+
+.burger:before {
+    top: 4px;
+}
+
+.burger:after {
+    bottom: 4px;
+}
+
+.burger.show .burger__span {
+    display: none;
+}
+
+.burger.show:before,
+.burger.show:after {
+    top: 13px;
+}
+
+.burger.show:before {
+    transform: rotate(45deg);
+}
+
+.burger.show:after {
+    transform: rotate(-45deg);
+}
+
+
+
+
+
+/* Header
+=========================*/
+
+.header {
+    padding: 6px 0;
+
+    background-color: #fff;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/* Nav
+=========================*/
+
+.nav {
+    height: 119px;
+
+    position: relative;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    font: 400 28px / 1.1 'Heebo', sans-serif;
+    color: #000;
+}
+
+.nav__li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin-right: 75px;
+}
+
+.nav__li:last-child {
+    margin-right: 0;
+}
+
+.nav__li.active {
+    position: relative;
+
+    font: 500 32px / 1.5 'Heebo', sans-serif;
+    color: #1A7F72;
+}
+
+.nav__li.active:after {
+    content: "";
+    display: block;
+    width: calc(100% + 30px);
+    height: 10px;
+
+    background: #1A7F72;
+    border-radius: 10px 10px 0px 0px;
+
+    position: absolute;
+    bottom: -6px;
+    left: -15px;
+}
+
+.nav__link {
+    transition: color .2s linear;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+    color: #1A7F72;
+}
+
+
+
+/* Intro
+=========================*/
+
+.intro {
+    padding: 68px 0 3px;
+
+    background: url("../img/intro/intro-bg.svg") center no-repeat;
+    background-size: cover;
+
+    text-align: center;
+}
+
+.intro__title {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto 22px;
+
+    font: 68px / 1.3 'Merienda One', cursive;
+    color: #fff;
+}
+
+.intro__text {
+    width: 100%;
+    max-width: 1110px;
+    margin: 0 auto 30px;
+
+    font: 24px / 1.3 'Heebo', sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.intro__photo img {
+    margin: 0 auto;
+}
+
+
+
+/* Section
+=========================*/
+
+.section--types-practices {
+    padding: 120px 0 105px;
+}
+
+.section--practice {
+    padding: 77px 0 31px;
+
+    position: relative;
+}
+
+.section--music {
+    padding: 59px 0 135px;
+
+    background: #edfbf9 url("../img/music/music-bg.svg") center no-repeat;
+    background-size: cover;
+}
+
+.section--features {
+    height: auto;
+    padding: 70px 0 97px;
+
+    background: url("../img/features/features-bg.png") center no-repeat;
+    background-size: cover;
+
+    position: relative;
+}
+
+.section--transform {
+    padding: 185px 0 265px;
+
+    background: url("../img/transform/background.svg") center no-repeat;
+    background-size: cover;
+}
+
+.section__header {
+    margin-bottom: 70px;
+}
+
+.section__title {
+    width: 100%;
+    max-width: 710px;
+    margin: 0 auto 22px;
+
+    font: 54px / 1.3 'Merienda One', cursive;
+    color: #000;
+    text-align: center;
+}
+
+.section__text {
+    width: 100%;
+    max-width: 1105px;
+    margin: 0 auto;
+
+    font: 24px / 1.3 'Heebo', sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+
+/* Types of practices
+=========================*/
+
+.types-practices__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.types-practices__item {
+    width: 420px;
+    padding: 50px 50px 0;
+    min-height: 480px;
+    height: auto;
+
+    background-color: #fff;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0px 19px 50px rgba(26, 127, 114, 0.15);
+
+    text-align: center;
+
+    position: relative;
+}
+
+.types-practices__icon {
+    margin-bottom: 20px;
+}
+
+.types-practices__icon img {
+    margin: 0 auto;
+}
+
+.types-practices__title {
+    margin-bottom: 20px;
+
+    font: 500 32px / 1.5 'Heebo', sans-serif;
+    color: #000;
+}
+
+.types-practices__text {
+    margin-bottom: 60px;
+
+    font: 18px / 1.3 'Heebo', sans-serif;
+    color: #000;
+}
+
+.types-practices__rectangle {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 2;
+
+    filter: drop-shadow(0 30px 15px rgba(26, 127, 114, .05));
+}
+
+.types-practices__rectangle img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/* Practice
+=========================*/
+
+.practice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.practice__item--photo {
+    margin-right: 65px;
+}
+
+.practice__item--photo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.practice__item--features {
+    width: 718px;
+}
+
+.practice-feature {
+    position: relative;
+
+    padding: 30px 49px 30px 40px;
+
+    background-color: transparent;
+
+    transition: background-color .2s linear;
+}
+
+.practice-feature:hover {
+    background-color: #fff;
+}
+
+.practice__title {
+    margin-bottom: 15px;
+
+    font: 500 32px / 1.5 'Heebo', sans-serif;
+    color: rgba(0, 0, 0, .8);
+}
+
+.practice__text {
+    font: 24px / 1.3 'Heebo', sans-serif;
+    color: rgba(0, 0, 0, .5);
+}
+
+.practice__rectangle {
+    opacity: 0;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    z-index: 2;
+
+    transition: opacity .2s linear;
+}
+
+.practice-feature:hover .practice__rectangle {
+    opacity: 1;
+ }
+
+.practice__rectangle img {
+    height: 100%;
+}
+
+.practice__icon {
+    opacity: 0;
+
+    position: absolute;
+    bottom: 10px;
+    right: 55px;
+    z-index: 2;
+
+    transition: opacity .1s linear;
+}
+
+.practice-feature:hover .practice__icon {
+    opacity: 1;
+}
+
+.practice__link--arrow {
+    display: block;
+}
+
+.bg-elem {
+    position: absolute;
+    bottom: -71px;
+    right: 0;
+    z-index: -1;
+}
+
+
+
+/* Music
+=========================*/
+
+.music {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.music__title {
+    margin-bottom: 10px;
+
+    font: 500 32px / 1.5 'Heebo', sans-serif;
+    color: rgba(0, 0, 0, .8);
+}
+
+.music__text {
+    font: 24px / 1.3 'Heebo', sans-serif;
+    color: rgba(0, 0, 0, .5);
+}
+
+.music__programs {
+    width: 100%;
+    max-width: 629px;
+    margin-right: 35px;
+
+    order: 1;
+}
+
+.music__program {
+    width: 100%;
+    height: 150px;
+    padding: 4px;
+    margin-bottom: 50px;
+
+    background: linear-gradient(90deg, #1E9787 0%, rgba(26, 127, 114, 0.38) 49.39%, rgba(26, 127, 114, 0.13) 73.58%, rgba(26, 127, 114, 0.04) 91.23%);
+    border-radius: 15px;
+
+    position: relative;
+}
+
+.music__program-wrap {
+    width: 100%;
+    height: 100%;
+
+    background: url("../img/music/bg.png") center no-repeat;
+    background-size: cover;
+    border-radius: 12px;
+}
+
+.music__program-rectangle {
+    width: 416px;
+    height: 100%;
+
+    border-radius: 15px;
+    box-shadow: -26px 4px 79px rgba(168, 207, 202, .39);
+
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.music__program-block {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 30px;
+    left: 40px;
+}
+
+.music__program:last-child {
+    margin-bottom: 0;
+}
+
+.music__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-left: 24px;
+    margin-bottom: -2px;
+
+    border-radius: 50%;
+    filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.3));
+
+    transition: filter .2s linear;
+}
+
+.music__icon {
+    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
+
+    transition: filter .2s linear;
+}
+
+.music__icon img {
+    width: 22px;
+    height: 26px;
+    margin: 0 auto;
+}
+
+.btn--play:hover .music__icon,
+.btn--play:focus .music__icon {
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.5));
+}
+
+.btn--play:hover .music__wrap,
+.btn--play:focus .music__wrap {
+    filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 1));
+}
+
+.music__photo {
+    margin-left: 50px;
+
+    order: 2;
+}
+
+.music__photo img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/* Features
+=========================*/
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.features-frame {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+}
+
+.features-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.features-frame--2 {
+    top: 100%;
+    bottom: unset;
+}
+
+.features__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features__item--photo {
+    margin: 0 50px;
+}
+
+.features__item--photo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.features__item-item {
+    width: 100%;
+    max-width: 597px;
+    height: 200px;
+    padding: 4px;
+    margin-bottom: 100px;
+
+    background: linear-gradient(to right, #B0EAE2, #378377);
+    border-radius: 18px;
+
+    text-align: right;
+}
+
+.features__item-item:last-child {
+    margin-bottom: 0;
+}
+
+.features__item-item--left {
+    background: linear-gradient(to left, #B0EAE2, #378377);
+
+    text-align: left;
+}
+
+.features__wrap {
+    height: 100%;
+    padding: 25px 35px 25px 79px;
+
+    background: linear-gradient(270deg, #C3EEE8 26.37%, rgba(195, 226, 222, 0.75) 63.87%, rgba(231, 243, 242, 0.4) 103.6%);
+    border-radius: 15px;
+}
+
+.features__wrap--left {
+    padding: 25px 79px 25px 35px;
+
+    background: linear-gradient(90deg, #C3EEE8 26.37%, rgba(195, 226, 222, 0.75) 63.87%, rgba(231, 243, 242, 0.4) 103.6%);
+}
+
+.features__title {
+    margin-bottom: 10px;
+
+    font: 500 32px / 1.5 'Heebo', sans-serif;
+    color: rgba(0, 0, 0, .8);
+}
+
+.features__text {
+    font: 24px / 1.3 'Heebo', sans-serif;
+    color: rgba(0, 0, 0, .5);
+}
+
+
+
+/* Transform
+=========================*/
+
+.transform__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 76px;
+}
+
+.transform__item:last-child {
+    margin-bottom: 0;
+}
+
+.transform__item-item--text {
+    width: 620px;
+
+    order: 1;
+}
+
+.transform__item-item--photo-1 {
+    margin-right: 100px;
+
+    order: 1;
+}
+
+.transform__item-item--photo-2 {
+    margin-left: 50px;
+
+    order: 2;
+}
+
+.transform__title {
+    margin-bottom: 17px;
+
+    font: 500 32px / 1.5 'Heebo', sans-serif;
+    color: rgba(0, 0, 0, .8);
+}
+
+.transform__text {
+    margin-bottom: 30px;
+
+    font: 24px / 1.3 'Heebo', sans-serif;
+    color: rgba(0, 0, 0, .5);
+}
+
+.transform__text p {
+    margin-bottom: 7px;
+}
+
+
+
+/* Footer
+=========================*/
+
+.footer {
+    padding: 10px 0 30px;
+
+    background: url("../img/footer/background.png") center no-repeat;
+    background-size: cover;
+
+    position: relative;
+}
+
+.footer_frame {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+}
+
+.footer_frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer__logo {
+    margin-bottom: 32px;
+}
+
+.footer__logo img {
+    margin: 0 auto;
+}
+
+.footer__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+
+    font: 28px / 1.4 'Heebo', sans-serif;
+    color: #000;
+}
+
+.footer__li {
+    padding-right: 22px;
+    margin-right: 20px;
+
+    position: relative;
+}
+
+.footer__li:last-child {
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.footer__li:after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 30px;
+
+    background-color: #000;
+
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+
+.footer__li:last-child:after {
+    display: none;
+}
+
+.footer__link {
+    transition: color .2s linear;
+}
+
+.footer__link:hover,
+.footer__link:focus {
+    color: #1A7F72;
+}
+
+
+
+/* Socials
+=========================*/
+
+.socials {
+    display: flex;
+    justify-content: center;
+}
+
+.socials__icon {
+    margin-right: 30px;
+
+    background-color: transparent;
+    border-radius: 50%;
+
+    transition: background-color .2s linear,
+    transform .2s linear;
+}
+
+.socials__icon:last-child {
+    margin-right: 0;
+}
+
+.socials__icon:hover {
+    background-color: #fff;
+    transform: scale(1.05);
+}
+
+
+
+/* Media
+=========================*/
+
+@media (max-width: 1800px) {
+
+    /* Container */
+
+    .container {
+        max-width: 1550px;
+    }
+
+    /* Header */
+
+    .header__logo img {
+        height: 60px;
+        width: auto;
+    }
+
+    /* Nav */
+
+    .nav {
+        height: 60px;
+    }
+
+    .nav__li {
+        margin-right: 50px;
+
+        font-size: 20px;
+    }
+
+    .nav__li.active {
+        font-size: 24px;
+    }
+
+    .nav__li.active:after {
+        height: 8px;
+    }
+
+    /* Intro */
+
+    .intro__title {
+        font-size: 52px;
+    }
+
+    .intro__text {
+        font-size: 20px;
+    }
+
+    .intro__photo img {
+        width: 530px;
+        height: auto;
+    }
+
+    /* Btn */
+
+    .btn {
+        font-size: 20px;
+
+        box-shadow: 0px 13px 15px rgb(26, 127, 114, .2);
+    }
+
+    .btn--more {
+        width: 180px;
+        height: 50px;
+    }
+
+    .btn--more:hover,
+    .btn--more:focus {
+        box-shadow: 0px 13px 20px rgba(26, 127, 114, .4);
+    }
+
+    .btn--start {
+        width: 250px;
+        height: 60px;
+
+        font-size: 22px;
+    }
+
+    /* Features */
+
+    .features__wrap {
+        padding-left: 35px;
+    }
+
+    .features__wrap--left {
+        padding-right: 35px;
+    }
+
+    /* Types of practices */
+
+    .types-practices__inner {
+        max-width: 1220px;
+        margin: 0 auto;
+    }
+
+    .types-practices__item {
+        width: 350px;
+        min-height: 430px;
+        padding: 30px 30px 0;
+
+        box-shadow: 0px 19px 30px rgb(26, 127, 114, .15);
+    }
+
+    .types-practices__title {
+        font-size: 23px;
+    }
+
+    .types-practices__text {
+        font-size: 16px;
+    }
+
+    .types-practices__icon img {
+        width: 70px;
+        height: auto;
+    }
+
+    /* Section */
+
+    .section--types-practices {
+        padding-top: 100px;
+    }
+
+    .section--practice {
+        padding-top: 40px;
+    }
+
+    .section__title {
+        max-width: 670px;
+
+        font-size: 38px;
+    }
+
+    .section__text {
+        font-size: 20px;
+    }
+
+    .section--transform {
+        padding: 130px 0 180px;
+    }
+
+    /* Practice */
+
+    .practice {
+        justify-content: center;
+    }
+
+    .practice__title {
+        font-size: 23px;
+    }
+
+    .practice__text {
+        font-size: 20px;
+    }
+
+    .practice__item--photo img {
+        width: 700px;
+    }
+
+    .practice__item--features {
+        width: 650px;
+    }
+
+    /* Music */
+
+    .music {
+        justify-content: center;
+    }
+
+    .music__programs {
+        max-width: 570px;
+    }
+
+    .music__program {
+        height: 120px;
+    }
+
+    .music__title {
+        font-size: 23px;
+    }
+
+    .music__text {
+        font-size: 19px;
+    }
+
+    .music__photo img {
+        width: 600px;
+    }
+
+    .music__program-block {
+        top: 25px;
+        left: 30px;
+    }
+
+    /* Features */
+
+    .features {
+        justify-content: center;
+    }
+
+    .features__title {
+        font-size: 23px;
+    }
+
+    .features__text {
+        font-size: 19px;
+    }
+
+    .features__item-item {
+        height: 170px;
+    }
+
+    .features__item-item {
+        max-width: 500px;
+        margin-bottom: 60px;
+    }
+
+    .features__item--photo {
+        margin: 0 90px;
+    }
+
+    .features__item--photo img {
+        width: 250px;
+    }
+
+    /* Transform */
+
+    .transform__title {
+        font-size: 23px;
+    }
+
+    .transform__text {
+        font-size: 19px;
+    }
+
+    .transform__item  {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .transform__item-item--text {
+        width: 550px;
+    }
+
+    .transform__item-item--photo-1 img {
+        max-width: 600px;
+        height: auto;
+    }
+
+    .transform__item-item--photo-2 img {
+        max-width: 666px;
+        height: auto;
+    }
+
+    /* Footer */
+
+    .footer__logo img {
+        width: 120px;
+    }
+
+    .footer__list {
+        font-size: 23px;
+    }
+
+    .footer__li:after {
+        top: 0;
+    }
+
+    /* Socials */
+
+    .socials__icon {
+        margin-right: 20px;
+    }
+
+    .socials__icon img {
+        width: 50px;
+        height: 50px;
+    }
+
+}
+
+@media (max-width: 1650px) {
+
+    /* Container */
+
+    .container {
+        max-width: 1450px;
+    }
+
+    /* Practice */
+
+    .practice__item--photo {
+        margin-right: 40px;
+    }
+
+    .practice__item--photo img {
+        width: 650px;
+    }
+
+}
+
+@media (max-width: 1550px) {
+
+    /* Container */
+
+    .container {
+        max-width: 1350px;
+    }
+
+}
+
+@media (max-width: 1450px) {
+
+    /* Container */
+
+    .container {
+        max-width: 1250px;
+    }
+
+    /* Btn */
+
+    .btn--start {
+        width: 250px;
+        height: 60px;
+        font-size: 21px;
+    }
+
+    /* Intro */
+
+    .intro__title {
+        font-size: 50px;
+    }
+
+    .intro__photo img {
+        width: 450px;
+    }
+
+    /* Music */
+
+    .music__programs {
+        max-width: 540px;
+    }
+
+    /* Features */
+
+    .features {
+        flex-direction: column;
+    }
+
+    .features__item {
+        width: 100%;
+        max-width: 552px;
+        margin-bottom: 50px;
+
+        order: 1;
+    }
+
+    .features__item--1 {
+        margin-bottom: 80px;
+    }
+
+    .features__item:last-child {
+        margin-bottom: 0;
+    }
+
+    .features__item--photo {
+        width: 100%;
+
+        order: 2;
+    }
+
+    .features__item--photo img {
+        height: 650px;
+        margin: 0 auto;
+    }
+
+    .features__item-item {
+        margin-bottom: 50px;
+    }
+
+    .features__item--3 {
+        order: 3;
+    }
+
+    .features__item-item {
+        height: 170px;
+
+        background: linear-gradient(to left, #B0EAE2, #378377);
+
+        text-align: left;
+    }
+
+    .features__wrap {
+        padding: 25px 30px 25px 30px;
+
+        background: linear-gradient(90deg, #C3EEE8 26.37%, rgba(195, 226, 222, 0.75) 63.87%, rgba(231, 243, 242, 0.4) 103.6%);
+    }
+
+    /* Transform */
+
+    .transform__item-item--photo-1 img {
+        max-width: 550px;
+    }
+
+    .transform__item-item--photo-2 img {
+        max-width: 600px;
+    }
+
+}
+
+@media (max-width: 1300px) {
+
+    /* Container */
+
+    .container {
+        max-width: 1150px;
+    }
+
+    /* Nav */
+
+    .nav {
+        height: 60px;
+    }
+
+    .nav__li {
+        margin-right: 40px;
+
+        font-size: 18px;
+    }
+
+    .nav__li.active {
+        font-size: 22px;
+    }
+
+    .nav__li.active:after {
+        width: calc(100% + 20px);
+        height: 8px;
+
+        left: -10px;
+    }
+
+    /* Header */
+
+    .header__logo img {
+        height: 60px;
+        width: auto;
+    }
+
+    /* Practice */
+
+    .practice__item--photo {
+        margin-right: 30px;
+    }
+
+}
+
+@media (max-width: 1200px) {
+
+    .container {
+        max-width: 1050px;
+    }
+
+    /* intro */
+
+    .intro__title {
+        max-width: 700px;
+
+        font-size: 45px;
+    }
+
+    .intro__text {
+        font-size: 20px;
+    }
+
+    .intro__photo img {
+        width: 400px;
+    }
+
+    /* Nav */
+
+    .nav {
+        height: 50px;
+    }
+
+    .nav__li {
+        margin-right: 40px;
+
+        font-size: 16px;
+    }
+
+    .nav__li.active {
+        font-size: 20px;
+    }
+
+    /* Header */
+
+    .header__logo img {
+        height: 50px;
+        width: auto;
+    }
+
+    /* Types of practices */
+
+    .types-practices__inner {
+        display: block;
+    }
+
+    .types-practices__item {
+        margin: 0 auto 120px;
+    }
+
+    .types-practices__item--2 {
+        margin-bottom: 97px;
+    }
+
+    .types-practices__item:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Btn */
+
+    .btn--more {
+        position: static;
+
+        transform: translateX(0);
+    }
+
+    /* Section */
+
+    .section__header {
+        margin-bottom: 60px;
+    }
+
+    .section__title {
+        max-width: 620px;
+
+        font-size: 35px;
+    }
+
+    .section--transform {
+        padding-bottom: 160px;
+    }
+
+    /* Practice */
+
+    .practice {
+        display: block;
+    }
+
+    .practice__item--photo {
+        margin-right: 0;
+    }
+
+    .practice__item--photo img {
+        width: 550px;
+        margin: 0 auto;
+    }
+
+    .practice__item--features {
+        margin: 0 auto;
+    }
+
+    /* Music */
+
+    .music {
+        display: block;
+    }
+
+    .music__photo {
+        margin-left: 0;
+        margin-bottom: 50px;
+    }
+
+    .music__photo img {
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    .music__programs {
+        max-width: 580px;
+        margin: 0 auto;
+    }
+
+    /* Features */
+
+    .features__item--photo img {
+        height: 600px;
+    }
+
+    /* Transform */
+
+    .transform__item {
+        display: block;
+        margin-bottom: 80px;
+    }
+
+    .transform__item-item--text {
+        margin: 0 auto;
+    }
+
+    .transform__item-item--photo-1,
+    .transform__item-item--photo-2 {
+        margin: 0;
+    }
+
+    .transform__item-item--photo-1 {
+        margin-bottom: 30px;
+    }
+
+    .transform__item-item--photo-2 {
+        margin-bottom: 50px;
+    }
+
+    .transform__item-item--photo-1 img {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .transform__item-item--photo-2 img {
+        max-width: 550px;
+        margin: 0 auto;
+    }
+
+    /* Footer */
+
+    .footer {
+        padding: 20px 0 30px;
+    }
+
+    .footer__logo img {
+        width: 100px;
+    }
+
+    .footer__list {
+        font-size: 20px;
+    }
+
+    .footer__li:after {
+        top: -2px
+    }
+
+    /* Socials */
+
+    .socials__icon img {
+        width: 45px;
+        height: 45px;
+    }
+
+}
+
+@media (max-width: 1100px) {
+
+    .container {
+        max-width: 950px;
+    }
+
+}
+
+@media (max-width: 991px) {
+
+    /* Container */
+
+    .container {
+        max-width: 850px;
+    }
+
+    .container--header {
+        max-width: 950px;
+    }
+
+    /* Header */
+
+    .header__logo img {
+        height: 45px;
+    }
+
+    /* Nav */
+
+    .nav {
+        display: none;
+    }
+
+    /* intro */
+
+    .intro {
+        padding-top: 50px;
+    }
+
+    .intro__title {
+        max-width: 670px;
+
+        font-size: 43px;
+    }
+
+    .intro__text {
+        font-size: 19px;
+    }
+
+    /* Section */
+
+    .section__title {
+        max-width: 520px;
+
+        font-size: 30px;
+    }
+
+    .section__text {
+        font-size: 18px;
+    }
+
+    .section__header {
+        margin-bottom: 50px;
+    }
+
+    /* Burger */
+
+    .burger {
+        display: flex;
+    }
+
+    /* Practice */
+
+    .practice__item--features {
+        width: 600px;
+    }
+
+    .practice__item--photo img {
+        width: 500px;
+    }
+
+    .practice__link--arrow img {
+        width: 90px;
+        height: auto;
+    }
+
+    /* Features */
+
+    .features__item--photo img {
+        height: 550px;
+    }
+
+
+}
+
+@media (max-width: 900px) {
+
+    /* Container */
+
+    .container {
+        max-width: 750px;
+    }
+
+    .container--header {
+        max-width: 950px;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    /* Container */
+
+    .container {
+        max-width: 650px;
+    }
+
+    .container--header {
+        max-width: 950px;
+    }
+
+    /* Section */
+
+    .section--types-practices {
+        padding-top: 90px;
+    }
+
+    .section--practice {
+        padding-top: 40px;
+    }
+
+    .section--music {
+        padding: 39px 0 105px;
+    }
+
+    .section__title {
+        max-width: 480px;
+
+        font-size: 27px;
+    }
+
+    .section__text {
+        font-size: 17px;
+    }
+
+    .section--transform {
+        padding: 100px 0 130px;
+    }
+
+    /* Intro */
+
+    .intro {
+        padding-top: 40px;
+    }
+
+    .intro__title {
+        max-width: 590px;
+
+        font-size: 38px;
+    }
+
+    .intro__text {
+        font-size: 18px;
+    }
+
+    .intro__photo img {
+        width: 380px;
+    }
+
+    /* Btn */
+
+    .btn {
+        font-size: 19px;
+    }
+
+    .btn--more {
+        width: 170px;
+        height: 45px;
+    }
+
+    .btn--start {
+        width: 230px;
+        height: 55px;
+
+        font-size: 20px;
+    }
+
+    .btn--play {
+        width: 65px;
+        height: 65px;
+    }
+
+    /* Types of practices */
+
+    .types-practices__item {
+        width: 330px;
+        min-height: 400px;
+        padding: 30px 30px 0;
+        margin-bottom: 110px;
+    }
+
+    .types-practices__item--2 {
+        margin-bottom: 87px;
+    }
+
+    .types-practices__text {
+        margin-bottom: 40px;
+    }
+
+    /* Practice */
+
+    .practice__item--photo img {
+        width: 470px;
+    }
+
+    .practice__title {
+        font-size: 21px;
+    }
+
+    .practice__text {
+        font-size: 17px;
+    }
+
+    .practice__item--features {
+        width: 500px;
+    }
+
+    .practice-feature {
+        padding: 20px 30px 30px 30px;
+    }
+
+    /* Features */
+
+    .features__item-item {
+        max-width: 460px;
+    }
+
+    .features__wrap {
+        padding: 25px;
+    }
+
+    .features__title {
+        font-size: 21px;
+    }
+
+    .features__text {
+        font-size: 18px;
+    }
+
+    .features__item--photo img {
+        height: 500px;
+    }
+
+    /* Music */
+
+    .music__photo img {
+        width: 450px;
+    }
+
+    .music__programs {
+        max-width: 490px;
+    }
+
+    .music__program {
+        height: 110px;
+    }
+
+    .music__program-block {
+        top: 21px;
+        left: 25px;
+    }
+
+    .music__title {
+        font-size: 21px;
+    }
+
+    .music__text {
+        font-size: 18px;
+    }
+
+    .music__wrap {
+        margin-left: 17px;
+    }
+
+    .music__icon img {
+        width: 20px;
+        height: 24px;
+    }
+
+    /* Transform */
+
+    .transform__item-item--text {
+        width: 500px;
+    }
+
+    .transform__item-item--photo-1 img {
+        max-width: 450px;
+    }
+
+    .transform__item-item--photo-2 img {
+        max-width: 480px;
+    }
+
+    .transform__title {
+        font-size: 21px;
+    }
+
+    .transform__text {
+        font-size: 18px;
+    }
+
+    /* Footer */
+
+    .footer__nav {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .footer__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        grid-gap: 18px;
+    }
+
+    .footer__li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer__li:after {
+        display: none;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    /* Intro */
+
+    .intro {
+        padding-top: 40px;
+    }
+
+    .intro__title {
+        max-width: 450px;
+
+        font-size: 30px;
+    }
+
+    .intro__text {
+        font-size: 15px;
+    }
+
+    .intro__photo img {
+        width: 340px;
+    }
+
+    /* Header */
+
+    .header__logo img {
+        height: 40px;
+    }
+
+    /* Nav */
+
+    .nav {
+        height: 40px;
+    }
+
+    /* Types of practices */
+
+    .types-practices__item {
+        width: 290px;
+        min-height: 360px;
+        padding: 20px 20px 0;
+        margin-bottom: 90px;
+
+        box-shadow: 0px 19px 20px rgb(26, 127, 114, .15);
+    }
+
+    .types-practices__item--2 {
+        margin-bottom: 67px;
+    }
+
+    .types-practices__icon img {
+        width: 60px;
+    }
+
+    .types-practices__title {
+        font-size: 20px;
+    }
+
+    .types-practices__text {
+        margin-bottom: 30px;
+
+        font-size: 15px;
+    }
+
+    .types-practices__rectangle {
+        filter: drop-shadow(0 19px 15px rgba(26, 127, 114, .05));
+    }
+
+    /* Btn */
+
+    .btn {
+        font-size: 17px;
+
+        box-shadow: 0px 13px 10px rgb(26 127 114 / 20%);
+    }
+
+    .btn--start {
+        width: 210px;
+        height: 50px;
+        margin-bottom: 50px;
+
+        font-size: 19px;
+    }
+
+
+    .btn--start:hover,
+    .btn--start:focus {
+        box-shadow: 0 20px 30px rgba(21, 113, 101, .5);
+    }
+
+    .btn--more {
+        width: 150px;
+        height: 45px;
+    }
+
+    .btn--more:hover,
+    .btn--more:focus {
+        box-shadow: 0px 13px 15px rgb(26 127 114 / 20%);
+    }
+
+    .btn--play {
+        width: 55px;
+        height: 55px;
+
+        right: 20px;
+    }
+
+    /* Section */
+
+    .section--types-practices {
+        padding-top: 60px;
+    }
+
+    .section--practice {
+        padding-top: 0;
+    }
+
+    .section--music {
+        padding: 10px 0 75px;
+    }
+
+    .section__header {
+        margin-bottom: 30px;
+    }
+
+    .section__title {
+        max-width: 440px;
+
+        font-size: 23px;
+    }
+
+    .section__text {
+        font-size: 15px;
+    }
+
+    .section--features {
+        padding: 50px 0;
+    }
+
+    .section--transform {
+        padding: 70px 0 90px;
+    }
+
+    /* Practice */
+
+    .practice__title {
+        font-size: 20px;
+    }
+
+    .practice__text {
+        font-size: 15px;
+    }
+
+    .practice__item--features {
+        width: 100%;
+    }
+
+    .practice-feature {
+        padding: 20px 20px 30px 25px;
+    }
+
+    .practice__item--photo img {
+        width: 400px;
+    }
+
+    .practice__link--arrow img {
+        width: 70px;
+    }
+
+    /* Music */
+
+    .music__programs {
+        max-width: 440px;
+    }
+
+    .music__program {
+        height: 100px;
+        margin-bottom: 30px;
+    }
+
+    .music__program-block {
+        top: 19px;
+        left: 20px;
+    }
+
+    .music__title {
+        margin-bottom: 5px;
+
+        font-size: 20px;
+    }
+
+    .music__text {
+        font-size: 15px;
+    }
+
+    .music__wrap {
+        margin-left: 11px;
+    }
+
+    .music__icon img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .music__program-rectangle {
+        display: none;
+    }
+
+    .music__photo img {
+        width: 400px;
+    }
+
+    /* Features */
+
+    .features__title {
+        font-size: 20px;
+    }
+
+    .features__text {
+        font-size: 15px;
+    }
+
+    .features__item-item {
+        max-width: 410px;
+        height: 140px;
+        margin-bottom: 30px;
+    }
+
+    .features__item {
+        margin-bottom: 40px;
+    }
+
+    .features__item--1 {
+        margin-bottom: 50px;
+    }
+
+    .features__wrap {
+        padding: 15px 20px;
+    }
+
+    .features__item--photo img {
+        height: 400px;
+    }
+
+    /* Transform */
+
+    .transform__item {
+        margin-bottom: 60px;
+    }
+
+    .transform__item-item--text {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .transform__item-item--photo-1 img {
+        max-width: 400px;
+    }
+
+    .transform__item-item--photo-2 img {
+        max-width: 420px;
+    }
+
+    .transform__title {
+        font-size: 20px;
+    }
+
+    .transform__text {
+        font-size: 15px;
+    }
+
+    /* Footer */
+
+    .footer__logo img {
+        width: 90px;
+    }
+
+    .footer__list {
+        grid-gap: 15px;
+
+        font-size: 18px;
+    }
+
+    /* Socials */
+
+    .socials__icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+@media (max-width: 430px) {
+
+    /* Intro */
+
+    .intro__title {
+        font-size: 28px;
+    }
+
+    .intro__text {
+        font-size: 15px;
+    }
+
+    .intro__photo img {
+        width: 300px;
+    }
+
+    /* Btn */
+
+    .btn--play {
+        right: 10px;
+    }
+
+    .btn--start {
+        width: 180px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    /* Section */
+
+    .section__title {
+        font-size: 22px;
+    }
+
+    /* Music */
+
+    .music__program-block {
+        left: 20px;
+    }
+
+    .music__photo img {
+        width: 100%;
+    }
+
+    /* Practice */
+
+    .practice__item--photo img {
+        width: 100%;
+    }
+
+    /* Transform */
+
+    .transform__item-item--photo-1 img {
+        max-width: 330px;
+    }
+
+    .transform__item-item--photo-2 img {
+        max-width: 350px;
+    }
+
+}
+
+@media (max-width: 370px) {
+
+    /* Header */
+
+    .header__logo img {
+        height: 35px;
+    }
+
+    /* Intro */
+
+    .intro {
+        padding-top: 35px;
+    }
+
+    .intro__title {
+        font-size: 26px;
+    }
+
+    .intro__text {
+        font-size: 14px;
+    }
+
+    /* Btn */
+
+    .btn--play {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Types of practices */
+
+    .types-practices__item {
+        width: 280px;
+        min-height: 340px;
+        margin-bottom: 80px;
+    }
+
+    .types-practices__item--2 {
+        margin-bottom: 57px;
+    }
+
+    .types-practices__icon img {
+        width: 55px;
+    }
+
+    /* Practice */
+
+    .practice__title {
+        font-size: 18px;
+    }
+
+    .practice__text {
+        font-size: 15px;
+    }
+
+    .practice-feature {
+        padding-left: 20px;
+    }
+
+    .practice__icon {
+        right: 35px;
+    }
+
+    /* Section */
+
+    .section__title {
+        font-size: 20px;
+    }
+
+    /* Music */
+
+    .music__program {
+        height: 90px;
+    }
+
+    .music__wrap {
+        margin-left: 9px;
+    }
+
+    .music__icon img {
+        width: 14px;
+        height: 17px;
+    }
+
+    .music__title {
+        font-size: 18px;
+    }
+
+    .music__text {
+        font-size: 14px;
+    }
+
+    .music__program-block {
+        top: 20px;
+    }
+
+    /* Features */
+
+    .features__item-item {
+        margin-bottom: 30px;
+    }
+
+    .features__title {
+        font-size: 18px;
+    }
+
+    .features__text {
+        font-size: 14px;
+    }
+
+    .features__item--photo img {
+        height: 350px;
+    }
+
+    /* Transform */
+
+    .transform__item-item--photo-1 img {
+        max-width: 100%;
+    }
+
+    .transform__item-item--photo-2 img {
+        max-width: 100%;
+    }
+
+    .transform__title {
+        font-size: 18px;
+    }
+
+    /* Footer */
+
+    .footer__list {
+        font-size: 17px;
+    }
+
+    .footer__logo img {
+        width: 80px;
+    }
+
+    /* Socials */
+
+    .socials__icon img {
+        width: 35px;
+        height: 35px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

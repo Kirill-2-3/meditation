@@ -38,7 +38,7 @@ $(function() {
         $(this).toggleClass("show");
 
         if (deviceHeight <= 850) {
-            $(nav).css("height", (deviceHeight - headerHeight + 100) + "px");
+            $(nav).css("height", (deviceHeight - headerHeight + 300) + "px");
             $("html, body").toggleClass("hidden");
         } else {
             $(nav).css("height", "auto");
@@ -54,7 +54,7 @@ $(function() {
         let logoHeight = $(".header__logo").height();
 
         if (deviceHeight <= 850 && windowWidth < 991) {
-            $(nav).css("height", (deviceHeight - headerHeight + 100) + "px");
+            $(nav).css("height", (deviceHeight - headerHeight + 300) + "px");
         } else if (windowWidth > 991) {
             $(nav).removeClass("show");
             $(header).removeClass("show");
